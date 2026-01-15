@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6WY7M0XGC0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6WY7M0XGC0');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>I+ Web - Adaptació LOPD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">I+ Web</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inici</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Serveis</a></li>
+            <li class="nav-item"><a class="nav-link" href="#acerca">Sobre Nosaltres</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacte</a></li>
+            <li class="nav-item"><a class="nav-link" href="avis-legal.html">Avís Legal</a></li>
+            <li class="nav-item"><a class="nav-link" href="privacitat.html">Privacitat</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="inicio" class="container mt-5 text-center">
+    <h2>Benvingut a I+ Web</h2>
+    <img src="img/main.jpg" alt="Imatge inici" class="img-fluid mb-3">
+    <p>Especialistes en Disseny Web i eCommerce.</p>
+</section>
+
+<section id="servicios" class="container mt-5">
+    <h2>Els nostres serveis</h2>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="img/ecommerce.jpg" alt="E-commerce" class="img-fluid mb-2">
+            <h3>E-Commerce</h3>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="img/marketing.jpg" alt="Marketing" class="img-fluid mb-2">
+            <h3>Marketing Digital</h3>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="img/web.jpg" alt="Disseny Web" class="img-fluid mb-2">
+            <h3>Disseny Web</h3>
+        </div>
+    </div>
+</section>
+
+<section id="acerca" class="container mt-5">
+    <h2>Sobre nosaltres</h2>
+    <p><strong>I+ Web S.A.</strong></p>
+    <p>Av. Ernest Lluch, 32 Edifici TCM3, Mataró (Barcelona)</p>
+    <p>Contacte: info@i+web.com</p>
+</section>
+
+<section id="contacto" class="container mt-5">
+    <h2>Contacte</h2>
+    <form id="contactForm" onsubmit="enviarFormulario(); return false;">
+        <div class="form-group">
+            <label for="nombre">Nom:</label>
+            <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correu Electrònic:</label>
+            <input type="email" class="form-control" id="correo" required>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="checkPrivacitat" required>
+            <label class="form-check-label" for="checkPrivacitat">
+                He llegit i accepto la <a href="privacitat.html" target="_blank">Política de Privacitat</a>.
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <div id="resultado" class="mt-3"></div>
+</section>
+
+<footer class="footer bg-dark text-white mt-5 p-4 text-center">
+    <p>© 2025 I+ Web S.A. Tots els drets reservats.</p>
+    <p>
+        <a href="avis-legal.html" class="text-white">Avís Legal</a> | 
+        <a href="privacitat.html" class="text-white">Política de Privacitat</a> | 
+        <a href="cookies.html" class="text-white">Política de Cookies</a>
+    </p>
+</footer>
+
+<div id="cookie-banner" class="alert alert-dark fixed-bottom mb-0 text-center" style="display: block;">
+    Aquest lloc web utilitza cookies per millorar l'experiència. 
+    <a href="cookies.html" class="alert-link">Més informació</a>.
+    <button class="btn btn-primary btn-sm ml-3" onclick="tancarBanner()">Acceptar</button>
+</div>
+
+<script>
+    function tancarBanner() {
+        document.getElementById('cookie-banner').style.display = 'none';
+        localStorage.setItem("cookies_acceptades", "true");
+    }
+
+    if(localStorage.getItem("cookies_acceptades") === "true") {
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function enviarFormulario() {
+        document.getElementById("resultado").innerHTML = "<div class='alert alert-success'>¡Formulari enviat amb èxit i dades tractades segons la LOPD!</div>";
+        document.getElementById("contactForm").reset();
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
